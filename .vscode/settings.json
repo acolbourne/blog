@@ -1,0 +1,39 @@
+{
+    // Indentation settings
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+  
+    // Auto-fix and formatting on save
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    },
+  
+    // ESLint validation for multiple file types
+    "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "json"],
+  
+    // Ensure consistent line endings across different OS
+    "files.eol": "\n",
+  
+    // Require space between function keyword and parentheses (e.g., function myFunc ( ) {})
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  
+    // Ensure a single newline at the end of every file (removes extra trailing new lines)
+    "files.insertFinalNewline": true,
+  
+    // Remove excessive trailing whitespace automatically on save
+    "files.trimTrailingWhitespace": true,
+  
+    // Prevent multiple empty lines within the file
+    "editor.trimAutoWhitespace": true,
+  
+    // Enable bracket pair colorization for better readability
+    "editor.bracketPairColorization.enabled": true,
+  
+    // Highlight matching brackets when hovering over them
+    "editor.guides.bracketPairs": "active"
+  }
+  
