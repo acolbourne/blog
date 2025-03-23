@@ -22,8 +22,8 @@
         "message": "Message failed to send. Please try again."
       }
     },
-		"errors": {
-			"required": "This field is required."
-		}
+    "errors": {
+      "required": "This field is required."
+    }
   }
 }
