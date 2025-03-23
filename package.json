@@ -14,7 +14,9 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "holy-loader": "^2.3.13",
     "next": "15.2.3",
+    "next-intl": "^4.0.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

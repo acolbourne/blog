@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+async function getNextConfig() {
+	const { default: createNextIntlPlugin } = await import('next-intl/plugin');
+	const withNextIntl = createNextIntlPlugin();
 
-export default nextConfig;
+	/** @type {import('next').NextConfig} */
+	const nextConfig: NextConfig = {};
+
+	return withNextIntl(nextConfig);
+}
+
+export default getNextConfig();

@@ -1,3 +1,7 @@
+// -> Imports -> Libraries
+import { useTranslations } from 'next-intl';
+
 export default function Home() {
-	return <h1>This is a test.</h1>;
+	const t = useTranslations();
+	return <h1>{t('testKey')}</h1>;
 }
