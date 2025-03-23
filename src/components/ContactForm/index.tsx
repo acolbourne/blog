@@ -3,6 +3,7 @@
 // -> Imports -> Libraries
 import { env } from '@/env';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 // -> Imports -> Components
@@ -22,6 +23,7 @@ export const ContactForm: React.FC = () => {
     handleSubmit,
     formState: { isSubmitting, isSubmitSuccessful, errors },
   } = useForm<ContactFormInputs>();
+  const [disableSubmit, setDisableSubmit] = useState<boolean>(false);
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data, event) => {
     event?.preventDefault();
@@ -65,6 +67,16 @@ export const ContactForm: React.FC = () => {
             {...register('access_key')}
             value={env.NEXT_PUBLIC_CONTACT_FORM_PUBLIC_KEY}
           />
+
+          <p hidden>
+            <input
+              name="bot-zapper"
+              value=""
+              onChange={() => {
+                setDisableSubmit(true);
+              }}
+            />
+          </p>
 
           <div className="field">
             <label htmlFor="name" className="label">
@@ -128,16 +140,18 @@ export const ContactForm: React.FC = () => {
             </div>
           )}
 
-          <div className="field">
-            <button
-              type="submit"
-              className={`button is-primary is-light ${isSubmitting ? 'is-loading' : ''}`}
-              disabled={isSubmitting}
-              aria-label={t('form.submit')}
-            >
-              {t('form.submit')}
-            </button>
-          </div>
+          {!disableSubmit && (
+            <div className="field">
+              <button
+                type="submit"
+                className={`button is-primary is-light ${isSubmitting ? 'is-loading' : ''}`}
+                disabled={isSubmitting}
+                aria-label={t('form.submit')}
+              >
+                {t('form.submit')}
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </div>
