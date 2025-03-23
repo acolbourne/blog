@@ -1,19 +1,17 @@
-import '@/cssfiles/globals.css';
-import HolyLoader from 'holy-loader';
-import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
+// -> Imports -> Libraries
 import { getLocale } from 'next-intl/server';
-import { Geist, Geist_Mono } from 'next/font/google';
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-});
+// -> Imports -> Providers
+import { NextIntlClientProvider } from 'next-intl';
 
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
-});
+// -> Imports -> Components
+import HolyLoader from 'holy-loader';
+
+// -> Imports -> Types
+import type { Metadata } from 'next';
+
+// -> Imports -> Stylesheets
+import '@/cssfiles/globals.css';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -28,7 +26,7 @@ export default async function RootLayout({
 	const locale = await getLocale();
 	return (
 		<html lang={locale}>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+			<body>
 				<HolyLoader
 					color="linear-gradient(to right, #f12711, #f5af19)"
 					height="2px"
