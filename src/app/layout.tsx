@@ -1,4 +1,5 @@
 import '@/cssfiles/globals.css';
+import HolyLoader from 'holy-loader';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
@@ -28,6 +29,12 @@ export default async function RootLayout({
 	return (
 		<html lang={locale}>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+				<HolyLoader
+					color="linear-gradient(to right, #f12711, #f5af19)"
+					height="2px"
+					easing="linear"
+					showSpinner={false}
+				/>
 				<NextIntlClientProvider>{children}</NextIntlClientProvider>
 			</body>
 		</html>
