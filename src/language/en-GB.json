@@ -1,3 +1,29 @@
 {
-  "testKey": "This is a test key which confirms that the configuration is working."
+  "testKey": "This is a test key which confirms that the configuration is working.",
+  "Homepage": {
+    "title": "Homepage"
+  },
+  "Contact": {
+    "title": "Contact Me",
+    "submissionSubject": "Contact Form Submission",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "responses": {
+      "success": {
+        "title": "Message sent successfully.",
+        "message": "Thank you for your message. I will be in touch soon."
+      },
+      "failure": {
+        "title": "Error.",
+        "message": "Message failed to send. Please try again."
+      }
+    },
+		"errors": {
+			"required": "This field is required."
+		}
+  }
 }
