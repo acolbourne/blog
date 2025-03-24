@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: SinglePostProps) {
   const { data: post, error: postError } = await tryCatch(getPostBySlug(slug));
 
   if (postError) notFound();
+
   return { title: post!.title, description: post!.excerpt };
 }
 

@@ -15,6 +15,7 @@ export type BlogPost = BlogPostMetadata & {
 export type ContentPageMetadata = {
   slug: string;
   title: string;
+  excerpt: string;
   featuredImage?: string;
 };
 

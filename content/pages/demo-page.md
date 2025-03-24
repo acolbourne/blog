@@ -10,4 +10,4 @@ featuredImage: '/images/testImage.jpg'
 # Hello World!
 
 Welcome to my new blog. This entry is here to allow me to test the system to make sure everything
-works.
+works. This is a page.

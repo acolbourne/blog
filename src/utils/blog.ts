@@ -45,6 +45,7 @@ export async function getPageBySlug(slug: string): Promise<ContentPage> {
     slug,
     content: contentHtml,
     title: data.title || '',
+    excerpt: data.excerpt || '',
   };
 }
 
