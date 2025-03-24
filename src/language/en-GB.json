@@ -25,5 +25,15 @@
     "errors": {
       "required": "This field is required."
     }
+  },
+  "Posts": {
+    "Categories": {
+      "title": "Category: {category}",
+      "description": "Posts in the category: {category}"
+    },
+    "Tags": {
+      "title": "Posts tagged with {tag}",
+      "description": "Posts tagged with {tag}"
+    }
   }
 }
