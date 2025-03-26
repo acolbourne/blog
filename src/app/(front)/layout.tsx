@@ -1,11 +1,16 @@
+// -> Imports -> Components
+import { Footer } from '@/components/Footer';
+import { NavigationBar } from '@/components/Navigation';
+import { Sidebar } from '@/components/Sidebar';
+
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="section">
-      <div className="container">
-        <p>Main Layout Test</p>
-      </div>
-      <div className="container">{children}</div>
-    </section>
+    <main className="container">
+      <NavigationBar />
+      <Sidebar />
+      {children}
+      <Footer />
+    </main>
   );
 };
 

@@ -28,7 +28,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <HolyLoader
-          color="linear-gradient(to right, #f12711, #f5af19)"
+          color="linear-gradient(to right, #7928ca, #ff0080)"
           height="2px"
           easing="linear"
           showSpinner={false}

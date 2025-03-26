@@ -35,5 +35,15 @@
       "title": "Posts tagged with {tag}",
       "description": "Posts tagged with {tag}"
     }
+  },
+  "Sidebar": {
+    "Widgets": {
+      "Categories": {
+        "title": "Categories"
+      },
+      "Tags": {
+        "title": "Tags"
+      }
+    }
   }
 }
