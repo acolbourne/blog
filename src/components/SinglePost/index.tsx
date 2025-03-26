@@ -9,7 +9,7 @@ export const SinglePost: React.FC<PostContentProps> = ({ post }) => {
   return (
     <div className="container">
       <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className="content" dangerouslySetInnerHTML={{ __html: post.content }} />
     </div>
   );
 };

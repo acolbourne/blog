@@ -10,21 +10,21 @@ export const CategoriesWidget: React.FC = () => {
   const categories = getAllCategories();
 
   return (
-    <div>
-      {categories.length > 0 && (
-        <div>
-          <h2>{t('title')}</h2>
-          <div>
+    <div className="media notification">
+      <article className="media-content">
+        <h2 className="title is-size-4">{t('title')}</h2>
+        {categories.length > 0 && (
+          <ul>
             {categories.map((category) => (
-              <div key={category}>
-                <Link href={`/categories/${category}`} className="text-blue-600 hover:underline">
+              <li key={category}>
+                <Link href={`/categories/${category}`} className="is-size-6">
                   {category}
                 </Link>
-              </div>
+              </li>
             ))}
-          </div>
-        </div>
-      )}
+          </ul>
+        )}
+      </article>
     </div>
   );
 };

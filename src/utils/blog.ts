@@ -15,7 +15,7 @@ const pagesDirectory = path.join(process.cwd(), 'content/pages');
 // -> Get individual post by slug.
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
   const processedContent = await remark().use(html).use(remarkGfm).process(content);
   const contentHtml = processedContent.toString();
@@ -36,7 +36,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
 // !!! Note: I've put this here because there wasn't enough difference between handling posts and pages to justify a separate util file.
 export async function getPageBySlug(slug: string): Promise<ContentPage> {
   const fullPath = path.join(pagesDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
   const processedContent = await remark().use(html).use(remarkGfm).process(content);
   const contentHtml = processedContent.toString();
@@ -57,7 +57,7 @@ export function getAllPosts(): BlogPostMetadata[] {
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
       const { data } = matter(fileContents);
 

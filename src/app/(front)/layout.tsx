@@ -1,15 +1,15 @@
 // -> Imports -> Components
-import { Footer } from '@/components/Footer';
 import { NavigationBar } from '@/components/Navigation';
 import { Sidebar } from '@/components/Sidebar';
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="container">
+    <main className="container py-6 px-3 my-3">
       <NavigationBar />
-      <Sidebar />
-      {children}
-      <Footer />
+      <div className="columns">
+        <Sidebar />
+        <div className="column">{children}</div>
+      </div>
     </main>
   );
 };
