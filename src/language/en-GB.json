@@ -9,5 +9,12 @@
       "title": "Tag: {tag}",
       "description": "Posts with the {tag} tag."
     }
+  },
+  "Errors": {
+    "404": {
+      "title": "Error - Not Found",
+      "description": "The requested content could not be found.",
+      "content": "The content you requested could not be found. If you followed a link to reach this page, please use the contact form to report it."
+    }
   }
 }
