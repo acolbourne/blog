@@ -1,3 +1,13 @@
 {
-  "testKey": "This is a test key that confirms that the configuration is working."
+  "testKey": "This is a test key that confirms that the configuration is working.",
+  "Posts": {
+    "Categories": {
+      "title": "Category: {category}",
+      "description": "Posts in the {category} category."
+    },
+    "Tags": {
+      "title": "Tag: {tag}",
+      "description": "Posts with the {tag} tag."
+    }
+  }
 }
