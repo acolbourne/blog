@@ -1,5 +1,14 @@
 {
   "testKey": "This is a test key that confirms that the configuration is working.",
+  "Forms": {
+    "Contact": {
+      "title": "Contact Me",
+      "description": "Send me a message using this form.",
+      "fields": {
+        "name": "Name"
+      }
+    }
+  },
   "Posts": {
     "Categories": {
       "title": "Category: {category}",
