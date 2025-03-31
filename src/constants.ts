@@ -3,7 +3,8 @@ import { env } from '@/env';
 
 export const websiteSettings: Record<string, string> = {
   // -> Settings -> General
-  title: 'Andrew C.',
+  name: 'Andrew C.',
+  title: 'Blog',
   description: 'My personal blog',
   domain: 'http://www.andrew-c.me',
   testDomain: 'http://localhost:3000',
