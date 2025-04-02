@@ -84,6 +84,10 @@ export const ContactForm: React.FC = () => {
 
       <Form {...theContactForm}>
         <form onSubmit={theContactForm.handleSubmit(onSubmit)}>
+          <p hidden>
+            <Input name="bot-zapper" value="" onChange={() => setDisableSubmit(true)} />
+          </p>
+
           <FormField
             control={theContactForm.control}
             name="name"
