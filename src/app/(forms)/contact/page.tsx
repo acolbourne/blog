@@ -1,6 +1,9 @@
 // -> Imports -> Libraries
 import { getTranslations } from 'next-intl/server';
 
+// -> Imports -> Components
+import { ContactForm } from '@/components/ContactForm';
+
 // -> Imports -> Types
 import type { NextPage } from 'next';
 
@@ -14,7 +17,7 @@ export async function generateMetadata() {
 }
 
 const ContactPage: NextPage = () => {
-  return <h1>Contact Page</h1>;
+  return <ContactForm />;
 };
 
 export default ContactPage;

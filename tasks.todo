@@ -1,3 +1,4 @@
 Tasks:
 	☐ Refactor the codebase wherever possible.
 	☐ Configure the RSS feed so that it works properly once posts are working.
+	☐ Investigate the hydration error on the contact form.

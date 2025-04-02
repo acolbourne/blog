@@ -19,6 +19,29 @@
       "description": "Posts with the {tag} tag."
     }
   },
+  "Contact": {
+    "title": "Contact Me",
+    "submissionSubject": "Contact Form Submission",
+    "Form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "Responses": {
+      "success": {
+        "title": "Message sent successfully.",
+        "message": "Thank you for your message. I will be in touch soon."
+      },
+      "failure": {
+        "title": "Error.",
+        "message": "Message failed to send. Please try again."
+      }
+    },
+    "Errors": {
+      "required": "This field is required."
+    }
+  },
   "Errors": {
     "404": {
       "title": "Error - Not Found",
