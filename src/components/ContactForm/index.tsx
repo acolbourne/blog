@@ -10,16 +10,17 @@ import { z } from 'zod';
 
 // -> Imports -> Components
 import { FormResponse } from '@/components/FormResponse';
+import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { LoaderCircle } from 'lucide-react';
 
 // -> Imports -> Utils
 import { tryCatch } from '@/utils/tryCatch';
 
 // -> Imports -> Schemas
 import { ContactFormSchema } from '@/schemas';
-import { Button } from '../ui/button';
 
 interface FormSubmissionResult {
   data: Response | null;
@@ -119,8 +120,8 @@ export const ContactForm: React.FC = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" disabled={disableSubmit}>
-            {t('Form.submit')}
+          <Button type="submit" disabled={disableSubmit} className="w-[150px]">
+            {disableSubmit === false ? t('Form.submit') : <LoaderCircle />}
           </Button>
         </form>
       </Form>
