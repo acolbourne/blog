@@ -24,11 +24,10 @@ export const ContactFormSchema = z.object({
         /cialis/i,
         /phentermine/i,
         /ozempic/i,
-        /<script.*?>/i,
-        /<\/script>/i,
-        /onerror=/i,
-        /onload=/i,
-        /eval\(/i,
+        /<script\b[^>]*>([\s\S]*?)<\/script>/i,
+        /onerror\s*=/i,
+        /onload\s*=/i,
+        /eval\s*\(/i,
         /\b(alert|confirm|prompt)\(/i,
       ];
 
