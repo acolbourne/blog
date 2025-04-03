@@ -12,6 +12,9 @@ jobs:
   lint:
     name: Run ESLint, Prettier, and TypeScript Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - name: Checkout Repository
