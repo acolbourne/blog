@@ -23,6 +23,7 @@
     "@t3-oss/env-nextjs": "^0.12.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dompurify": "^3.2.4",
     "gray-matter": "^4.0.3",
     "holy-loader": "^2.3.13",
     "lucide-react": "^0.485.0",

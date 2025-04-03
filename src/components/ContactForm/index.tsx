@@ -3,6 +3,7 @@
 // -> Imports -> Libraries
 import { env } from '@/env';
 import { zodResolver } from '@hookform/resolvers/zod';
+import DOMPurify from 'dompurify';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -11,7 +12,14 @@ import { z } from 'zod';
 // -> Imports -> Components
 import { FormResponse } from '@/components/FormResponse';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { LoaderCircle } from 'lucide-react';
@@ -44,6 +52,12 @@ export const ContactForm: React.FC = () => {
   const onSubmit = async (submission: z.infer<typeof ContactFormSchema>) => {
     setDisableSubmit(true);
 
+    const purifiedSubmission = {
+      name: DOMPurify.sanitize(submission.name),
+      email: DOMPurify.sanitize(submission.email),
+      message: DOMPurify.sanitize(submission.message),
+    };
+
     const { data, error } = await tryCatch(
       fetch(env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT, {
         method: 'POST',
@@ -52,7 +66,7 @@ export const ContactForm: React.FC = () => {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          ...submission,
+          ...purifiedSubmission,
           subject: t('submissionSubject'),
           access_key: env.NEXT_PUBLIC_CONTACT_FORM_PUBLIC_KEY,
         }),
@@ -97,6 +111,11 @@ export const ContactForm: React.FC = () => {
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
+                {theContactForm.formState.errors.name && (
+                  <FormDescription className="text-red-500 text-sm mb-2">
+                    {theContactForm.formState.errors.name.message}
+                  </FormDescription>
+                )}
               </FormItem>
             )}
           />
@@ -109,6 +128,11 @@ export const ContactForm: React.FC = () => {
                 <FormControl>
                   <Input type="email" {...field} />
                 </FormControl>
+                {theContactForm.formState.errors.email && (
+                  <FormDescription className="text-red-500 text-sm mb-2">
+                    {theContactForm.formState.errors.email.message}
+                  </FormDescription>
+                )}
               </FormItem>
             )}
           />
@@ -121,6 +145,11 @@ export const ContactForm: React.FC = () => {
                 <FormControl>
                   <Textarea {...field} />
                 </FormControl>
+                {theContactForm.formState.errors.message && (
+                  <FormDescription className="text-red-500 text-sm mb-2">
+                    {theContactForm.formState.errors.message.message}
+                  </FormDescription>
+                )}
               </FormItem>
             )}
           />

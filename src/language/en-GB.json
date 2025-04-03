@@ -39,7 +39,8 @@
       }
     },
     "Errors": {
-      "required": "This field is required."
+      "required": "This field is required.",
+      "invalid": "Invalid"
     }
   },
   "Errors": {
