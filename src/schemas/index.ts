@@ -24,7 +24,7 @@ export const ContactFormSchema = z.object({
         /cialis/i,
         /phentermine/i,
         /ozempic/i,
-        /<script\b[^>]*>([\s\S]*?)<\/script>/i,
+        /<script\b[^>]*>([\s\S]*?)<\/script\s*>/i,
         /onerror\s*=/i,
         /onload\s*=/i,
         /eval\s*\(/i,
