@@ -3,10 +3,10 @@ name: Lint, Format, and Type Check
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   lint:
     name: Run ESLint, Prettier, and TypeScript Check
