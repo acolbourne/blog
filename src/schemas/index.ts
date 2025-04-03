@@ -19,6 +19,7 @@ export const ContactFormSchema = z.object({
         /click here/i,
         /visit my site/i,
         /make money fast/i,
+        /exclusive deal/i,
         /viagra/i,
         /cialis/i,
         /phentermine/i,
