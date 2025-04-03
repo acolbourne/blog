@@ -1,4 +1,5 @@
 // -> Imports -> Libraries
+import DOMPurify from 'dompurify';
 import { z } from 'zod';
 
 export const ContactFormSchema = z.object({
@@ -13,6 +14,7 @@ export const ContactFormSchema = z.object({
     .min(10)
     .max(300)
     .superRefine((val, ctx) => {
+      const purifiedVal = DOMPurify.sanitize(val);
       const spamOrInjectionPatterns = [
         /buy now/i,
         /free money/i,
@@ -24,14 +26,13 @@ export const ContactFormSchema = z.object({
         /cialis/i,
         /phentermine/i,
         /ozempic/i,
-        /<script\b[^>]*>([\s\S]*?)<\/script\s*>/i,
         /onerror\s*=/i,
         /onload\s*=/i,
         /eval\s*\(/i,
         /\b(alert|confirm|prompt)\(/i,
       ];
 
-      if (spamOrInjectionPatterns.some((pattern) => pattern.test(val))) {
+      if (spamOrInjectionPatterns.some((pattern) => pattern.test(purifiedVal))) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
         });
