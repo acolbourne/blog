@@ -18,6 +18,7 @@ export const currentDomain =
   env.NODE_ENV === 'development' ? websiteSettings.testDomain : websiteSettings.domain;
 
 export const footerUrls: Record<string, string> = {
+  sourceCode: 'https://www.github.com/acolbourne/blog',
   privacy: '/pages/privacy',
   terms: '/pages/terms',
   financialDisclaimer: '/pages/financial-disclaimer',

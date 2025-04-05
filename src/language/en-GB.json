@@ -47,6 +47,7 @@
     "copyright": "© {year} {fullName}.",
     "builtWith": "Crafted with much 💖 and ☕.",
     "Links": {
+      "sourceCode": "Code",
       "privacy": "Privacy",
       "terms": "Terms",
       "financialDisclaimer": "Financial Disclaimer"
