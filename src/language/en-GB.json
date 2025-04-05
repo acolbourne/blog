@@ -1,5 +1,13 @@
 {
   "testKey": "This is a test key that confirms that the configuration is working.",
+  "Navigation": {
+    "Categories": {
+      "title": "Categories"
+    },
+    "Tags": {
+      "title": "Tags"
+    }
+  },
   "Forms": {
     "Contact": {
       "title": "Contact Me",
