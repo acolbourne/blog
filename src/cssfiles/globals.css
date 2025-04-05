@@ -119,4 +119,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  .navigation-bar {
+    @apply w-full lg:w-[320px] p-6 border-r shrink-0 border-zinc-100 lg:min-h-screen lg:bg-gray-100/25 lg:dark:bg-stone-900/75;
+  }
+  .main-content {
+    @apply w-full lg:px-12 lg:py-6;
+  }
+  .footer-link {
+    @apply border-b border-dotted border-zinc-950;
+  }
 }

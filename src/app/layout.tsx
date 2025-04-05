@@ -5,6 +5,7 @@ import { getLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 
 // -> Imports -> Components
+import { NavigationBar } from '@/components/Navigation';
 import HolyLoader from 'holy-loader';
 
 // -> Imports -> Constants
@@ -52,7 +53,12 @@ export default async function RootLayout({
           easing="linear"
           showSpinner={false}
         />
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <div className="flex flex-row">
+            <NavigationBar />
+            <main className="main-content">{children}</main>
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

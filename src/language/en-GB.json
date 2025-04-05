@@ -43,6 +43,15 @@
       "invalid": "Invalid"
     }
   },
+  "Footer": {
+    "copyright": "© {year} {fullName}.",
+    "builtWith": "Crafted with much 💖 and ☕.",
+    "Links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "financialDisclaimer": "Financial Disclaimer"
+    }
+  },
   "Errors": {
     "404": {
       "title": "Error - Not Found",
