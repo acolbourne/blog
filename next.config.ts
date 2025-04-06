@@ -5,7 +5,11 @@ async function getNextConfig() {
   const withNextIntl = createNextIntlPlugin();
 
   /** @type {import('next').NextConfig} */
-  const nextConfig: NextConfig = {};
+  const nextConfig: NextConfig = {
+    images: {
+      domains: ['0e803d8nw1.ufs.sh'],
+    },
+  };
 
   return withNextIntl(nextConfig);
 }
