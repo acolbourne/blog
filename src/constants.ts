@@ -5,6 +5,8 @@ export const websiteSettings: Record<string, string> = {
   // -> Settings -> General
   name: 'Andrew C.',
   fullName: 'Andrew Colbourne',
+  profileImage: 'https://0e803d8nw1.ufs.sh/f/jzSosASW07FkCPSp3oj7sSNqFhwlWTgXMOaedPR06zIUZ3AY',
+  profileDescription: "Once wore a friend's hat for a photo.",
   // -> Settings -> SEO
   title: 'Blog',
   description: 'My personal blog',
