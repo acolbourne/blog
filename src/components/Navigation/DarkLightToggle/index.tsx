@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 // -> Imports -> Components
 import { Button } from '@/components/ui/button';
+import { Lightbulb, LightbulbOff } from 'lucide-react';
 
 export const DarkLightToggle: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -21,8 +22,10 @@ export const DarkLightToggle: React.FC = () => {
   );
 
   return (
-    <Button variant="ghost" onClick={toggleDarkMode}>
-      {isDarkMode ? 'Light' : 'Dark'}
-    </Button>
+    <div id="DarkLightToggle">
+      <Button variant="ghost" onClick={toggleDarkMode}>
+        {isDarkMode ? <Lightbulb /> : <LightbulbOff />}
+      </Button>
+    </div>
   );
 };

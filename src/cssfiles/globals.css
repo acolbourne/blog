@@ -119,9 +119,6 @@
   body {
     @apply bg-background text-foreground;
   }
-  #Profile {
-    @apply flex flex-col items-center gap-4;
-  }
   .navigation-bar {
     @apply w-full lg:w-[320px] p-6 border-r shrink-0 border-zinc-100 lg:min-h-screen lg:bg-gray-100/25 lg:dark:bg-stone-900/75;
   }
@@ -133,6 +130,12 @@
   }
   .navigation-bar-tag {
     @apply px-2 py-1 text-sm bg-gray-200 rounded hover:bg-gray-300;
+  }
+  #Profile {
+    @apply flex flex-col items-center gap-4;
+  }
+  #DarkLightToggle {
+    @apply text-left;
   }
   .main-content {
     @apply w-full lg:px-12 lg:py-6;
