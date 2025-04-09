@@ -16,6 +16,26 @@ export const websiteSettings: Record<string, string> = {
   defaultLocale: 'en-GB',
 } as const;
 
+export const navigationItems = [
+  {
+    id: 1,
+    title: 'Home',
+    url: '/',
+  },
+
+  {
+    id: 2,
+    title: 'Uses',
+    url: '/pages/uses',
+  },
+
+  {
+    id: 3,
+    title: 'Contact Me',
+    url: '/contact',
+  },
+] as const;
+
 export const currentDomain =
   env.NODE_ENV === 'development' ? websiteSettings.testDomain : websiteSettings.domain;
 

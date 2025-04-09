@@ -1,6 +1,9 @@
 {
   "testKey": "This is a test key that confirms that the configuration is working.",
   "Navigation": {
+    "Main": {
+      "title": "Navigation"
+    },
     "Categories": {
       "title": "Categories"
     },

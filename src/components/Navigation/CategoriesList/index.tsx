@@ -13,17 +13,15 @@ export const CategoriesList: React.FC = () => {
   return (
     <div id="CategoriesList">
       <h2 className="navigation-bar-heading">{t('title')}</h2>
-      <div className="navigation-bar-categories-container">
-        <ul className="p-2 list-inside list-disc text-sm">
-          {categories.map((category) => (
-            <li key={category}>
-              <Link href={`/categories/${category}`} className="navigation-bar-category">
-                {category}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {categories.map((category) => (
+          <li key={category}>
+            <Link href={`/categories/${category}`} className="navigation-bar-link">
+              {category}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

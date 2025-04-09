@@ -2,6 +2,7 @@
 import Footer from '@/components/Footer';
 import { CategoriesList } from '@/components/Navigation/CategoriesList';
 import { DarkLightToggle } from '@/components/Navigation/DarkLightToggle';
+import { Navigation } from '@/components/Navigation/Navigation';
 import { Profile } from '@/components/Navigation/Profile';
 import { TagCloud } from '@/components/Navigation/TagCloud';
 import { Separator } from '@/components/ui/separator';
@@ -13,7 +14,7 @@ export const NavigationBar: React.FC = () => {
         <nav className="space-y-2 lg:space-y-6">
           <Profile />
           <Separator />
-          <div>Navigation</div>
+          <Navigation />
           <Separator />
           <CategoriesList />
           <Separator />
