@@ -12,6 +12,11 @@ export const websiteSettings: Record<string, string> = {
   description: 'My personal blog',
   domain: 'http://www.andrew-c.me',
   testDomain: 'http://localhost:3000',
+  // -> Settings -> Social
+  twitter: 'https://x.com/andyctrader',
+  linkedin: '',
+  reddit: 'https://www.reddit.com/user/andyc225/',
+  github: 'https://www.github.com/acolbourne',
   // -> Settings -> i18n
   defaultLocale: 'en-GB',
 } as const;
