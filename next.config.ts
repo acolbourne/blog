@@ -7,7 +7,14 @@ async function getNextConfig() {
   /** @type {import('next').NextConfig} */
   const nextConfig: NextConfig = {
     images: {
-      domains: ['0e803d8nw1.ufs.sh'],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: '0e803d8nw1.ufs.sh',
+          port: '',
+          pathname: '/**',
+        },
+      ],
     },
   };
 

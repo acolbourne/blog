@@ -120,7 +120,7 @@
     @apply bg-background text-foreground;
   }
   .navigation-bar {
-    @apply w-full md:w-[300px] lg:w-[320px] p-6 border-r shrink-0 border-zinc-100 md:min-h-screen md:bg-gray-100/25 md:dark:bg-stone-900/75 dark:border-stone-700;
+    @apply w-full md:w-[300px] p-6 border-r shrink-0 border-zinc-100 md:min-h-screen md:bg-gray-100/25 md:dark:bg-stone-900/75 dark:border-stone-700;
   }
   .navigation-bar-heading {
     @apply text-lg font-semibold mb-2;
