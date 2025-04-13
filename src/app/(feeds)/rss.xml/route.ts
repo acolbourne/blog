@@ -32,7 +32,12 @@ export async function GET() {
     });
   });
 
-  return new Response(feed.xml({ indent: true }), {
+  const xmlContent = feed.xml({ indent: true });
+  const xslLink = `${currentDomain}/xsl/rss.xsl`;
+  const removeXmlDeclaration = xmlContent.replace(/^<\?xml[^>]*\?>\s*/, '');
+  const preparedFinalXml = `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="${xslLink}"?>\n${removeXmlDeclaration}`;
+
+  return new Response(preparedFinalXml, {
     headers: {
       'Content-Type': 'application/rss+xml; charset=utf-8',
     },
