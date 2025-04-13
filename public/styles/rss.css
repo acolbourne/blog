@@ -1,0 +1,30 @@
+body {
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+  background: #f9f9f9;
+}
+h1 {
+  margin-bottom: 1rem;
+}
+.item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.item a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0070f3;
+}
+.item > .small {
+  font-size: 0.8rem;
+}
+.date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}

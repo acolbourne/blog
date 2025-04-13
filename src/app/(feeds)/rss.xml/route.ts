@@ -1,4 +1,5 @@
 // -> Imports -> Libraries
+import { getTranslations } from 'next-intl/server';
 import RSS from 'rss';
 
 // -> Imports -> Constants
@@ -8,6 +9,7 @@ import { currentDomain, websiteSettings } from '@/constants';
 import { getAllPosts } from '@/utils/blog';
 
 export async function GET(req: Request) {
+  const t = await getTranslations('RSSFeed');
   const posts = getAllPosts();
 
   const feed = new RSS({
@@ -37,7 +39,36 @@ export async function GET(req: Request) {
   const acceptHeader = req.headers.get('accept') || '';
   const isWebBrowser = acceptHeader.includes('text/html');
 
-  return new Response(isWebBrowser ? 'RETURN HTML OUTPUT HERE' : xmlContent, {
+  const htmlOutputForBrowsers = `
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <title>${t('title', { siteName: websiteSettings.name })}</title>
+          <link rel="stylesheet" href="${currentDomain}/styles/rss.css" />
+        </head>
+        <body>
+          <div class="item">
+						<h1>${t('description', { siteName: websiteSettings.name })}</h1>
+						<p>${t('subheading')}</p>
+						<a href="${currentDomain}" class="small">&laquo; ${t('homeLink')}</a>
+          </div>
+					${posts
+            .map(
+              (post) => `
+              <div class="item">
+                <a href="${currentDomain}/posts/${post.slug}">${post.title}</a>
+                <div class="date">${new Date(post.date).toDateString()}</div>
+                <p>${post.excerpt}</p>
+              </div>
+            `,
+            )
+            .join('')}
+        </body>
+      </html>
+    `;
+
+  return new Response(isWebBrowser ? htmlOutputForBrowsers : xmlContent, {
     headers: {
       'Content-Type': isWebBrowser
         ? 'text/html; charset=utf-8'

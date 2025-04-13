@@ -64,6 +64,12 @@
       "financialDisclaimer": "Financial Disclaimer"
     }
   },
+  "RSSFeed": {
+    "title": "RSS Feed | {siteName}",
+    "description": "{siteName} - RSS Feed",
+    "subheading": "Subscribe to the latest posts and updates from my blog. To get started, simply copy the URL and add it to your favorite RSS reader.",
+    "homeLink": "Click here to return to the homepage."
+  },
   "Errors": {
     "404": {
       "title": "Error - Not Found",
