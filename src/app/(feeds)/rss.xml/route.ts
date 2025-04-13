@@ -7,7 +7,7 @@ import { currentDomain, websiteSettings } from '@/constants';
 // -> Imports -> Utils
 import { getAllPosts } from '@/utils/blog';
 
-export async function GET() {
+export async function GET(req: Request) {
   const posts = getAllPosts();
 
   const feed = new RSS({
@@ -15,7 +15,7 @@ export async function GET() {
     description: websiteSettings.description,
     generator: websiteSettings.title,
     site_url: currentDomain,
-    feed_url: `${currentDomain}/feed.xml`,
+    feed_url: `${currentDomain}/rss.xml`,
     copyright: `${new Date().getFullYear()} ${websiteSettings.title}`,
     language: websiteSettings.defaultLocale,
     pubDate: new Date(),
@@ -33,13 +33,15 @@ export async function GET() {
   });
 
   const xmlContent = feed.xml({ indent: true });
-  const xslLink = `${currentDomain}/xsl/rss.xsl`;
-  const removeXmlDeclaration = xmlContent.replace(/^<\?xml[^>]*\?>\s*/, '');
-  const preparedFinalXml = `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="${xslLink}"?>\n${removeXmlDeclaration}`;
 
-  return new Response(preparedFinalXml, {
+  const acceptHeader = req.headers.get('accept') || '';
+  const isWebBrowser = acceptHeader.includes('text/html');
+
+  return new Response(isWebBrowser ? 'RETURN HTML OUTPUT HERE' : xmlContent, {
     headers: {
-      'Content-Type': 'application/rss+xml; charset=utf-8',
+      'Content-Type': isWebBrowser
+        ? 'text/html; charset=utf-8'
+        : 'application/rss+xml; charset=utf-8',
     },
   });
 }
