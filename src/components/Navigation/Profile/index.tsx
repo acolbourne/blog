@@ -18,7 +18,7 @@ export const Profile: React.FC = () => {
         <div className="absolute inset-0 rounded-sm bg-gradient-to-r from-purple-500 to-pink-500 dark:from-cyan-400 dark:to-blue-400 blur-[2px] group-hover:blur-[4px] transition-all duration-300 ease-in-out" />
         <Image
           priority
-          className="relative z-10 h-18 w-18 rounded-sm"
+          className="relative z-10 h-12 w-12 min-md:h-18 min-md:w-18 rounded-sm"
           width={72}
           height={72}
           quality={100}
@@ -28,13 +28,13 @@ export const Profile: React.FC = () => {
           alt={websiteSettings.fullName}
         />
       </div>
-      <div className="text-center space-y-2">
+      <div className="min-md:text-center space-y-2">
         <p className="text-lg font-medium leading-none">{websiteSettings.fullName}</p>
         <p className="text-xs leading-none text-muted-foreground">
           {websiteSettings.profileDescription}
         </p>
       </div>
-      <div className="flex items-center justify-center space-x-2 text-2xl">
+      <div className="flex items-center justify-center space-x-2 text-2xl max-md:hidden">
         {websiteSettings.twitter != '' && (
           <Link href={websiteSettings.twitter} target="_blank">
             <Twitter className="text-[#0f1419] dark:text-white" />

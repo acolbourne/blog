@@ -21,6 +21,7 @@ import type { Metadata } from 'next';
 import '@/cssfiles/globals.css';
 
 // -> Imports -> Fonts
+import Footer from '@/components/Footer';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 const geistSans = Geist({
@@ -54,9 +55,12 @@ export default async function RootLayout({
           showSpinner={false}
         />
         <NextIntlClientProvider>
-          <div className="flex flex-row">
+          <div className="flex flex-col md:flex-row">
             <NavigationBar />
             <main className="main-content">{children}</main>
+            <div className="md:hidden bg-slate-50 dark:bg-slate-900">
+              <Footer />
+            </div>
           </div>
         </NextIntlClientProvider>
       </body>

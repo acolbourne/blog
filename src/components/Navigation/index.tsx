@@ -9,20 +9,27 @@ import { Separator } from '@/components/ui/separator';
 
 export const NavigationBar: React.FC = () => {
   return (
-    <aside className="navigation-bar">
-      <div className="flex flex-col justify-between md:fixed md:top-0 md:left-0 md:h-screen md:p-6">
-        <nav className="space-y-6">
+    <aside>
+      <div className="navigation-bar">
+        <div className="flex flex-col justify-between md:fixed md:top-0 md:left-0 md:h-screen md:p-6">
+          <nav className="space-y-6">
+            <Profile />
+            <Separator />
+            <Navigation />
+            <Separator />
+            <CategoriesList />
+            <Separator />
+            <TagCloud />
+            <Separator />
+            <DarkLightToggle />
+          </nav>
+          <Footer />
+        </div>
+      </div>
+      <div className="mobile-navigation">
+        <nav>
           <Profile />
-          <Separator />
-          <Navigation />
-          <Separator />
-          <CategoriesList />
-          <Separator />
-          <TagCloud />
-          <Separator />
-          <DarkLightToggle />
         </nav>
-        <Footer />
       </div>
     </aside>
   );
