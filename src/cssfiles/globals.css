@@ -150,3 +150,33 @@
     @apply border-b border-dotted border-zinc-950;
   }
 }
+
+nav {
+  --sb-thumb-color: oklch(0.922 0 0) 50%;
+  --sb-size: 4px;
+  scrollbar-gutter: stable;
+  padding-top: 6px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+nav::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+nav::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 4px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 4px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  nav {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}

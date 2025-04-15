@@ -12,7 +12,7 @@ export const NavigationBar: React.FC = () => {
     <aside>
       <div className="navigation-bar">
         <div className="flex flex-col justify-between md:fixed md:top-0 md:left-0 md:h-screen md:p-6">
-          <nav className="space-y-6">
+          <nav className="space-y-6 overflow-y-hidden hover:overflow-y-auto max-h-screen">
             <Profile />
             <Separator />
             <Navigation />
