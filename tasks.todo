@@ -1,5 +1,5 @@
 Tasks:
 	☐ Refactor the codebase wherever possible.
-	☐ Configure the RSS feed so that it works properly once posts are working.
+	✔ Configure the RSS feed so that it works properly once posts are working. @done (4/15/2025, 12:44:24 PM)
 	✔ Investigate the hydration error on the contact form. @done (4/5/2025, 9:38:43 AM)
 	☐ Ensure that the layout is fully responsive and works well on all devices.

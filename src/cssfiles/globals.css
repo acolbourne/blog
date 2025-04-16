@@ -147,7 +147,7 @@
     @apply w-full max-md:min-h-screen px-8 py-6 lg:px-12 lg:py-6;
   }
   .footer-link {
-    @apply border-b border-dotted border-zinc-950;
+    @apply border-b border-dotted border-zinc-950 dark:border-stone-300;
   }
 }
 

@@ -3,9 +3,11 @@ import Footer from '@/components/Footer';
 import { CategoriesList } from '@/components/Navigation/CategoriesList';
 import { DarkLightToggle } from '@/components/Navigation/DarkLightToggle';
 import { Navigation } from '@/components/Navigation/Navigation';
+import { MobileNavigation } from '@/components/Navigation/Navigation/Mobile';
 import { Profile } from '@/components/Navigation/Profile';
 import { TagCloud } from '@/components/Navigation/TagCloud';
 import { Separator } from '@/components/ui/separator';
+import { HamburgerMenu } from './Navigation/HamburgerMenu';
 
 export const NavigationBar: React.FC = () => {
   return (
@@ -28,7 +30,13 @@ export const NavigationBar: React.FC = () => {
       </div>
       <div className="mobile-navigation">
         <nav>
-          <Profile />
+          <div className="flex justify-between items-center">
+            <Profile />
+            <HamburgerMenu menuIsOpen={false} />
+          </div>
+          <div>
+            <MobileNavigation />
+          </div>
         </nav>
       </div>
     </aside>
