@@ -9,7 +9,7 @@ import { NavigationBar } from '@/components/Navigation';
 import HolyLoader from 'holy-loader';
 
 // -> Imports -> Constants
-import { websiteSettings } from '@/constants';
+import { currentDomain, websiteSettings } from '@/constants';
 
 // -> Imports -> Utils
 import { seoMetadata } from '@/utils/seoMetadata';
@@ -22,6 +22,7 @@ import '@/cssfiles/globals.css';
 
 // -> Imports -> Fonts
 import Footer from '@/components/Footer';
+import { MobileNavigation } from '@/components/MobileNavigation';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 const geistSans = Geist({
@@ -56,7 +57,10 @@ export default async function RootLayout({
         />
         <NextIntlClientProvider>
           <div className="flex flex-col md:flex-row">
-            <NavigationBar />
+            <aside>
+              <NavigationBar />
+              <MobileNavigation settings={websiteSettings} domain={currentDomain} />
+            </aside>
             <main className="main-content">{children}</main>
             <div className="md:hidden bg-slate-50 dark:bg-slate-900">
               <Footer />

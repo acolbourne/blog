@@ -21,7 +21,7 @@ export const websiteSettings: Record<string, string> = {
   defaultLocale: 'en-GB',
 } as const;
 
-export const navigationItems = [
+export const navigationItems: ReadonlyArray<{ id: number; title: string; url: string }> = [
   {
     id: 1,
     title: 'Home',
@@ -39,7 +39,7 @@ export const navigationItems = [
     title: 'Contact Me',
     url: '/contact',
   },
-] as const;
+];
 
 export const currentDomain =
   env.NODE_ENV === 'development' ? websiteSettings.testDomain : websiteSettings.domain;
