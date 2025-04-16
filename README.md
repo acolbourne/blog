@@ -16,12 +16,12 @@ This is my personal blog, which I've built with Next.js, TypeScript, and Tailwin
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
 - **Content**: Markdown with [gray-matter](https://github.com/jonschlinkert/gray-matter) and
   [remark](https://github.com/remarkjs/remark)
 - **Forms**: [React Hook Form](https://react-hook-form.com/) with
   [Zod](https://github.com/colinhacks/zod) validation
-- **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
+- **I18n**: [next-intl](https://next-intl-docs.vercel.app/)
 - **Code Quality**: ESLint, Prettier, Husky, lint-staged
 
 ## Want to spin it up?
