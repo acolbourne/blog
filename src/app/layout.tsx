@@ -9,7 +9,7 @@ import { NavigationBar } from '@/components/Navigation';
 import HolyLoader from 'holy-loader';
 
 // -> Imports -> Constants
-import { currentDomain, websiteSettings } from '@/constants';
+import { currentDomain, navigationItems, websiteSettings } from '@/constants';
 
 // -> Imports -> Utils
 import { seoMetadata } from '@/utils/seoMetadata';
@@ -59,7 +59,11 @@ export default async function RootLayout({
           <div className="flex flex-col md:flex-row">
             <aside>
               <NavigationBar />
-              <MobileNavigation settings={websiteSettings} domain={currentDomain} />
+              <MobileNavigation
+                settings={websiteSettings}
+                domain={currentDomain}
+                navigationLinks={navigationItems}
+              />
             </aside>
             <main className="main-content">{children}</main>
             <div className="md:hidden bg-slate-50 dark:bg-slate-900">

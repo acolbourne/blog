@@ -11,7 +11,7 @@ import Link from 'next/link';
 const Footer: React.FC = () => {
   const t = useTranslations('Footer');
   return (
-    <footer className="flex flex-col space-y-4 max-md:text-center max-md:items-center max-md:justify-center max-md:py-2 max-md:border-t max-md:border-t-zinc-100">
+    <footer id="Footer">
       <Separator className="max-md:hidden" />
       <div className="space-y-2">
         <p className="text-sm font-semibold tracking-wide">
