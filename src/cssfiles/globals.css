@@ -135,7 +135,7 @@
     @apply block p-1 text-sm font-medium rounded-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700;
   }
   #Mobile-Navigation {
-    @apply md:hidden bg-gray-100/25 dark:bg-stone-900/75 border-b border-zinc-100 dark:border-stone-700 py-2 px-4 mb-2;
+    @apply md:hidden fixed top-0 left-0 w-full min-h-[48px] bg-gray-100 dark:bg-stone-900/75 border-b border-zinc-100 dark:border-stone-700 py-2 px-4 mb-2;
   }
   #Profile {
     @apply flex flex-row min-md:flex-col items-center gap-4;
@@ -143,8 +143,8 @@
   #DarkLightToggle {
     @apply text-center max-md:mb-0 max-lg:mb-4;
   }
-  .main-content {
-    @apply w-full max-md:min-h-screen px-8 py-6 lg:px-12 lg:py-6;
+  #Main-Content {
+    @apply w-full max-md:min-h-screen px-8 py-6 lg:px-12 lg:py-6 max-md:mt-24;
   }
   #Footer {
     @apply flex flex-col space-y-4 max-md:text-center max-md:items-center max-md:justify-center max-md:py-2 max-md:border-t max-md:border-t-zinc-100 max-md:dark:bg-stone-900/75 max-md:dark:border-t-stone-700;
